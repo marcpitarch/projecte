@@ -24,6 +24,7 @@ public class Projecte {
         float pes=0;
         boolean esMasculi=false, prova=false;
         
+        
         Scanner entrada = new Scanner(System.in);
         
         int opcio;
