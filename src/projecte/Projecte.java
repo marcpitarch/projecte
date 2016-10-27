@@ -16,6 +16,7 @@ public class Projecte {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         // TODO code application logic here
         String nom=null, posicio; 
@@ -26,7 +27,7 @@ public class Projecte {
         Scanner entrada = new Scanner(System.in);
         
         int opcio;
-        
+        do {
         System.out.println("0. Sortir del programa");
             System.out.println("1. Introduir un nou jugador");
             System.out.println("2. Borrar un jugador");
@@ -57,10 +58,10 @@ public class Projecte {
                     break;
                default:
                 System.out.println("No has introduit cap numero correcte");
-            } while (opcio != 0);
+            } 
                 
-
-    }
         
+    }while (opcio != 0);   
         
+} 
 }
