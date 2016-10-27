@@ -22,7 +22,7 @@ public class Projecte {
         String nom=null, posicio; 
         int dorsal=0, anys=0; 
         float pes=0;
-        boolean esMasculi=false;
+        boolean esMasculi=false, prova=false;
         
         Scanner entrada = new Scanner(System.in);
         
