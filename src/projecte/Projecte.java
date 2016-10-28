@@ -21,7 +21,8 @@ public class Projecte {
         String nom = null, posicio;
         int dorsal = 0, anys = 0;
         float pes = 0;
-        boolean esMasculi = false, omplit = false;
+        boolean home = false, omplit = false;
+        char esHome=' ';
 
         Scanner entrada = new Scanner(System.in);
 
@@ -39,21 +40,26 @@ public class Projecte {
                     //sortir
                     break;
                 case 1:
+                    omplit = true;
                     if (omplit = true) {
                         System.out.println("Introdueix el nom del jugador");
-                        nom = entrada.nextLine();
+                        nom = entrada.next();
                         System.out.println("Introdueix la seva posició");
-                        posicio = entrada.nextLine();
+                        posicio = entrada.next();
                         System.out.println("Introdueix el dorsal del jugador");
                         dorsal = entrada.nextInt();
                         System.out.println("Introdueix els anys del jugador");
                         anys = entrada.nextInt();
                         System.out.println("Introdueix el pes del jugador");
                         pes = entrada.nextFloat();
-                        System.out.println("És del futbol Masculí? (True o False)");
-                        esMasculi = entrada.nextBoolean();
+                        System.out.println("És home o dona?(H/D):");
+                        do{
+                           esHome = entrada.next().toUpperCase().charAt(0);         
+                                                                                             
+                          }while(esHome != 'H' && esHome != 'D');
+                 home = esHome == 'H';     
                         System.out.println("Dades introduides correctament!");
-                        omplit = true;
+                        omplit = false;
                         
                     }
                     
