@@ -18,11 +18,11 @@ public class Projecte {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String nom = null, posicio;
+        String nom = null, posicio = null;
         int dorsal = 0, anys = 0;
         float pes = 0;
-        boolean home = false, omplit = false;
-        char esHome=' ';
+        boolean home = false, omplit = false, jugador = false;
+        char esHome=' ', esJugador=' ', introduit, borrar;
 
         Scanner entrada = new Scanner(System.in);
 
@@ -40,8 +40,8 @@ public class Projecte {
                     //sortir
                     break;
                 case 1:
-                    omplit = true;
-                    if (omplit = true) {
+                    
+                    if (!omplit) {
                         System.out.println("Introdueix el nom del jugador");
                         nom = entrada.next();
                         System.out.println("Introdueix la seva posició");
@@ -59,26 +59,125 @@ public class Projecte {
                           }while(esHome != 'H' && esHome != 'D');
                  home = esHome == 'H';     
                         System.out.println("Dades introduides correctament!");
-                        omplit = false;
+                        omplit = true;
                         
-                    }
-                    
-                    if (omplit = false) {
+                    } else {
                         System.out.println("Les dades ja han estat introduïdes, si en vols posar més l'hauràs de borrar primer.");
+                        omplit=false;
                     }
 
                     //introduir metode per donar alta 1 jugador
                     break;
+                    
                 case 2:
+                    
+                    if (!omplit) {
+                        System.out.println("No hi ha cap jugador per borrar, si el vols borrar l'hauràs d'introduïr primer");
+                    }
+                    
+                    if (omplit)  {
+                        
+
+                        do {
+
+                            System.out.println("Vols veure les dades del Jugador? (S/N)");
+                            introduit = entrada.skip("[\r\n]*").nextLine().charAt(0);
+
+                        } while (introduit != 's' && introduit != 'n' && introduit != 'S' && introduit != 'N');
+
+                        if (introduit == 's' || introduit == 'S') {
+                            System.out.println("Dades del Jugador: ");
+                            System.out.println("Nom: " + nom);
+                            System.out.println("Posicio: " + posicio);
+                            System.out.println("Dorsal: " + dorsal);
+                            System.out.println("Anys: " + anys);
+                            System.out.println("Pes: " + pes);
+                            System.out.println("Home: " + home);
+
+                           
+                        do {
+
+                            System.out.println("Segur que el vols esborrar? (S/N)");
+                            borrar = entrada.skip("[\r\n]*").nextLine().charAt(0);
+
+                        } while (borrar != 's' && borrar != 'n' && borrar != 'S' && borrar != 'N');
+
+                        if (borrar == 's' || borrar == 'S') {
+                            omplit = false;
+
+                            System.out.println("Dades del jugador borrades!");
+                        }
+                        }   
+                        
+                    }
+                    
 
                     //introduir un metode per borrar jugadors
                     break;
                 case 3:
+                    do {
+
+                            System.out.println("Vols veure les dades del Jugador? (S/N)");
+                            introduit = entrada.skip("[\r\n]*").nextLine().charAt(0);
+
+                        } while (introduit != 's' && introduit != 'n' && introduit != 'S' && introduit != 'N');
+
+                        if (introduit == 's' || introduit == 'S') {
+                            System.out.println("Dades del Jugador: ");
+                            System.out.println("Nom: " + nom);
+                            System.out.println("Posicio: " + posicio);
+                            System.out.println("Dorsal: " + dorsal);
+                            System.out.println("Anys: " + anys);
+                            System.out.println("Pes: " + pes);
+                            System.out.println("Home: " + home);
+                            
+                        }
+                        
+                    do {
+                        System.out.println("Vols modificar el jugador(S/N):");
+                        
+                    }  while (introduit != 's' && introduit != 'n' && introduit != 'S' && introduit != 'N');  
+                        
+                       System.out.println("Aquest és el nom del jugador, escriu el nou nom" + nom);
+                       nom = entrada.next();
+                       System.out.println("Aquesta és la posicio del jugador, escriu la nova posicio" + posicio);
+                       posicio = entrada.next();
+                       System.out.println("Aquest és el dorsal del jugador, escriu el nou dorsal" + dorsal);
+                       dorsal = entrada.nextInt();
+                       System.out.println("Aquests son els anys del jugador, escriu els nous anys" + anys);
+                       anys = entrada.nextInt();
+                       System.out.println("Aquest és el pes del jugador, escriu el nou pes" + pes);
+                       pes = entrada.nextFloat();
+                       
+                    
+                    
+                    
+                    
 
                     //Modificar jugador
                     break;
 
                 case 4:
+                    do {
+
+                            System.out.println("Vols veure les dades del Jugador? (S/N)");
+                            introduit = entrada.skip("[\r\n]*").nextLine().charAt(0);
+
+                        } while (introduit != 's' && introduit != 'n' && introduit != 'S' && introduit != 'N');
+
+                        if (introduit == 's' || introduit == 'S') {
+                            System.out.println("Dades del Jugador: ");
+                            System.out.println("Nom: " + nom);
+                            System.out.println("Posicio: " + posicio);
+                            System.out.println("Dorsal: " + dorsal);
+                            System.out.println("Anys: " + anys);
+                            System.out.println("Pes: " + pes);
+                            System.out.println("Home: " + home);
+                            
+                        }
+           
+                    
+                    
 
                     //Llistar jugador
                     break;
@@ -90,3 +189,4 @@ public class Projecte {
 
     }
 }
+
