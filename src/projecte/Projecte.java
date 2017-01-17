@@ -25,6 +25,7 @@ public class Projecte {
         char esHome=' ', esJugador=' ', introduit, borrar;
 
         Scanner entrada = new Scanner(System.in);
+        Scanner entText=new Scanner(System.in);
 
         int opcio;
         do {
@@ -43,7 +44,7 @@ public class Projecte {
                     
                     if (!omplit) {
                         System.out.println("Introdueix el nom del jugador");
-                        nom = entrada.next();
+                        nom = entText.next();
                         System.out.println("Introdueix la seva posició");
                         posicio = entrada.next();
                         System.out.println("Introdueix el dorsal del jugador");
@@ -139,7 +140,7 @@ public class Projecte {
                     }  while (introduit != 's' && introduit != 'n' && introduit != 'S' && introduit != 'N');  
                         
                        System.out.println("Aquest és el nom del jugador, escriu el nou nom" + nom);
-                       nom = entrada.next();
+                       nom = entText.next();
                        System.out.println("Aquesta és la posicio del jugador, escriu la nova posicio" + posicio);
                        posicio = entrada.next();
                        System.out.println("Aquest és el dorsal del jugador, escriu el nou dorsal" + dorsal);
@@ -148,6 +149,7 @@ public class Projecte {
                        anys = entrada.nextInt();
                        System.out.println("Aquest és el pes del jugador, escriu el nou pes" + pes);
                        pes = entrada.nextFloat();
+                       
                        
                     
                     
